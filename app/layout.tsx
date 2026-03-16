@@ -1,18 +1,20 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
+import { Playfair_Display, Jost } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-cormorant',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-playfair',
 })
 
-const dmSans = DM_Sans({
+const jost = Jost({
   subsets: ['latin'],
-  variable: '--font-dm-sans',
+  weight: ['300', '400', '500'],
+  variable: '--font-jost',
 })
 
 export const metadata: Metadata = {
@@ -31,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${cormorant.variable} ${dmSans.variable}`}>
+    <html lang="es" className={`${playfair.variable} ${jost.variable}`}>
       <body className="bg-[#f5f2ee] text-[#1a1a1a] antialiased">
         <Navbar />
         <main>{children}</main>
