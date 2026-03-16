@@ -17,10 +17,10 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: 'France Interiorismo',
-  description: 'Diseño de interiores que conecta con quien eres. Proyectos residenciales y comerciales.',
+  description: 'Ser para Estar — Diseño de interiores que conecta con quien eres.',
   openGraph: {
     title: 'France Interiorismo',
-    description: 'Diseño de interiores que conecta con quien eres.',
+    description: 'Ser para Estar — Diseño de interiores que conecta con quien eres.',
     type: 'website',
   },
 }

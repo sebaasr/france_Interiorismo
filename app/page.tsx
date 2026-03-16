@@ -29,8 +29,8 @@ export default async function HomePage() {
           <p className="text-[10px] tracking-[0.3em] uppercase text-[#c9bfb0] mb-4">
             Diseño de Interiores
           </p>
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.05] max-w-3xl">
-            Espacios que cuentan tu historia
+          <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-white leading-[1.0] max-w-3xl italic">
+            Ser para Estar
           </h1>
           <div className="mt-8 flex items-center gap-8">
             <Link
@@ -55,6 +55,9 @@ export default async function HomePage() {
           <p className="text-[10px] tracking-[0.3em] uppercase text-[#8a8078] mb-6">Estudio</p>
           <p className="font-serif text-2xl md:text-3xl leading-relaxed text-[#1a1a1a]">
             El diseño va más allá de crear espacios hermosos. Se trata de conectar contigo, entender quién eres, y traducirlo en un lugar que puedas habitar.
+          </p>
+          <p className="font-serif text-lg md:text-xl italic text-[#8a8078] mt-4">
+            — Ser para Estar
           </p>
           <Link
             href="/estudio"
