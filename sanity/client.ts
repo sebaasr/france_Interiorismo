@@ -18,7 +18,10 @@ export const client = createClient({
 export async function sanityFetch<T>(query: string, params?: Record<string, any>): Promise<T[]> {
   if (!isConfigured) return []
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return client.fetch<T[]>(query, params as any)
+  const result = await client.fetch<T[] | T | null>(query, params as any).catch(() => null)
+  if (result === null || result === undefined) return []
+  if (Array.isArray(result)) return result
+  return [result as T]
 }
 
 const builder = createImageUrlBuilder(client)
