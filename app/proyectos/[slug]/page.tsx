@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { client, urlFor } from '@/sanity/client'
+import { sanityFetch, urlFor } from '@/sanity/client'
 import { projectBySlugQuery, allProjectsQuery } from '@/sanity/queries'
 import { PortableText } from 'next-sanity'
 
@@ -30,15 +30,14 @@ interface Project {
 }
 
 export async function generateStaticParams() {
-  const projects: Project[] = await client.fetch(allProjectsQuery).catch(() => [])
+  const projects: Project[] = await sanityFetch<Project>(allProjectsQuery)
   return projects.map((p) => ({ slug: p.slug.current }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const project: Project | null = await client
-    .fetch(projectBySlugQuery, { slug })
-    .catch(() => null)
+  const results = await sanityFetch<Project>(projectBySlugQuery, { slug })
+  const project = results[0] ?? null
   if (!project) return {}
   return {
     title: `${project.title} — France Interiorismo`,
@@ -48,9 +47,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const project: Project | null = await client
-    .fetch(projectBySlugQuery, { slug })
-    .catch(() => null)
+  const results = await sanityFetch<Project>(projectBySlugQuery, { slug })
+  const project: Project | null = results[0] ?? null
 
   if (!project) notFound()
 

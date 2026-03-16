@@ -1,4 +1,4 @@
-import { client } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/client'
 import { allProjectsQuery } from '@/sanity/queries'
 import ProjectCard from '@/components/ProjectCard'
 
@@ -22,7 +22,7 @@ interface Project {
 const categories = ['Todos', 'Residencial', 'Comercial', 'Oficinas', 'Hospitalidad']
 
 export default async function ProyectosPage() {
-  const projects: Project[] = await client.fetch(allProjectsQuery).catch(() => [])
+  const projects: Project[] = await sanityFetch<Project>(allProjectsQuery)
 
   return (
     <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { client, urlFor } from '@/sanity/client'
+import { sanityFetch, urlFor } from '@/sanity/client'
 import { studioQuery } from '@/sanity/queries'
 import { PortableText } from 'next-sanity'
 
@@ -24,7 +24,8 @@ interface Studio {
 }
 
 export default async function EstudioPage() {
-  const studio: Studio | null = await client.fetch(studioQuery).catch(() => null)
+  const results = await sanityFetch<Studio>(studioQuery)
+  const studio: Studio | null = results[0] ?? null
 
   return (
     <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">

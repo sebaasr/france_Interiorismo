@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { client } from '@/sanity/client'
+import { sanityFetch } from '@/sanity/client'
 import { featuredProjectsQuery } from '@/sanity/queries'
 import ProjectCard from '@/components/ProjectCard'
 
@@ -16,7 +16,7 @@ interface Project {
 }
 
 export default async function HomePage() {
-  const projects: Project[] = await client.fetch(featuredProjectsQuery).catch(() => [])
+  const projects: Project[] = await sanityFetch<Project>(featuredProjectsQuery)
 
   return (
     <>

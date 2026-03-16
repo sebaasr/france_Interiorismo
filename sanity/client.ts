@@ -5,12 +5,21 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-01-01'
 
+const isConfigured = typeof projectId === 'string' && /^[a-z0-9-]+$/.test(projectId)
+
 export const client = createClient({
-  projectId: projectId || 'placeholder',
+  projectId: isConfigured ? projectId : 'aaaaaaaa',
   dataset,
   apiVersion,
-  useCdn: !!projectId,
+  useCdn: isConfigured,
 })
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function sanityFetch<T>(query: string, params?: Record<string, any>): Promise<T[]> {
+  if (!isConfigured) return []
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return client.fetch<T[]>(query, params as any)
+}
 
 const builder = createImageUrlBuilder(client)
 
