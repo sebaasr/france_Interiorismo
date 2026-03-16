@@ -6,9 +6,10 @@ export default function Footer() {
     <footer className="bg-[#1a1a1a] text-[#c9bfb0] py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
-          <p className="font-serif text-2xl text-white tracking-widest uppercase mb-3">
-            France Interiorismo
-          </p>
+          <div className="flex flex-col leading-none mb-3">
+            <span className="font-serif text-2xl text-white tracking-widest uppercase">France</span>
+            <span className="text-[9px] tracking-[0.35em] uppercase text-[#8a8078] mt-0.5">Interiorismo</span>
+          </div>
           <p className="text-sm leading-relaxed text-[#8a8078]">
             Diseño de interiores que conecta con quien eres.
           </p>

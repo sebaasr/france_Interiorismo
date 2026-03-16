@@ -33,13 +33,17 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link
-          href="/"
-          className={`font-serif text-xl md:text-2xl tracking-widest uppercase transition-colors duration-500 ${
+        <Link href="/" className="flex flex-col leading-none">
+          <span className={`font-serif text-2xl md:text-3xl tracking-widest uppercase transition-colors duration-500 ${
             isDark ? 'text-[#1a1a1a]' : 'text-white'
-          }`}
-        >
-          France Interiorismo
+          }`}>
+            France
+          </span>
+          <span className={`text-[9px] tracking-[0.35em] uppercase transition-colors duration-500 ${
+            isDark ? 'text-[#8a8078]' : 'text-white/70'
+          }`}>
+            Interiorismo
+          </span>
         </Link>
 
         {/* Desktop links */}
