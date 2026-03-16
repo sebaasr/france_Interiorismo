@@ -28,7 +28,7 @@ export const featuredProjectsQuery = groq`
 `
 
 export const projectBySlugQuery = groq`
-  *[_type == "project" && slug.current == $slug][0] {
+  *[_type == "project" && slug.current == $slug] {
     _id,
     title,
     slug,
@@ -44,7 +44,7 @@ export const projectBySlugQuery = groq`
 `
 
 export const studioQuery = groq`
-  *[_type == "studio"][0] {
+  *[_type == "studio"] {
     name,
     tagline,
     bio,
