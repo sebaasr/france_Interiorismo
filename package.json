@@ -9,14 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@sanity/image-url": "^2.0.3",
-    "@sanity/vision": "^5.16.0",
     "framer-motion": "^12.37.0",
     "next": "16.1.6",
-    "next-sanity": "^12.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "sanity": "^5.16.0"
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

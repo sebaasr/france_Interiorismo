@@ -1,22 +1,9 @@
 import Link from 'next/link'
-import { sanityFetch } from '@/sanity/client'
-import { featuredProjectsQuery } from '@/sanity/queries'
+import { getFeaturedProjects } from '@/lib/projects'
 import ProjectCard from '@/components/ProjectCard'
 
-export const revalidate = 60
-
-interface Project {
-  _id: string
-  title: string
-  slug: { current: string }
-  category: string
-  location?: string
-  year?: number
-  coverImage: unknown
-}
-
-export default async function HomePage() {
-  const projects: Project[] = await sanityFetch<Project>(featuredProjectsQuery)
+export default function HomePage() {
+  const projects = getFeaturedProjects()
 
   return (
     <>
@@ -82,7 +69,7 @@ export default async function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {projects.map((project, i) => (
-              <ProjectCard key={project._id} project={project} index={i} />
+              <ProjectCard key={project.id} project={project} index={i} />
             ))}
           </div>
         </section>

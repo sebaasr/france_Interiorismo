@@ -1,28 +1,13 @@
-import { sanityFetch } from '@/sanity/client'
-import { allProjectsQuery } from '@/sanity/queries'
+import { getAllProjects } from '@/lib/projects'
 import ProjectCard from '@/components/ProjectCard'
-
-export const revalidate = 60
 
 export const metadata = {
   title: 'Proyectos — France Interiorismo',
   description: 'Catálogo completo de proyectos de diseño de interiores.',
 }
 
-interface Project {
-  _id: string
-  title: string
-  slug: { current: string }
-  category: string
-  location?: string
-  year?: number
-  coverImage: unknown
-}
-
-const categories = ['Todos', 'Residencial', 'Comercial', 'Oficinas', 'Hospitalidad']
-
-export default async function ProyectosPage() {
-  const projects: Project[] = await sanityFetch<Project>(allProjectsQuery)
+export default function ProyectosPage() {
+  const projects = getAllProjects()
 
   return (
     <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -41,7 +26,7 @@ export default async function ProyectosPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {projects.map((project, i) => (
-            <ProjectCard key={project._id} project={project} index={i} />
+            <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
       )}
