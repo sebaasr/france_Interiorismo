@@ -16,6 +16,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      <input type="hidden" name="_cc" value="francecaballeroid@gmail.com" />
       <div>
         <label className="block text-[10px] tracking-[0.2em] uppercase text-[#8a8078] mb-2">
           Nombre
