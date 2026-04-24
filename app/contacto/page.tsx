@@ -23,32 +23,32 @@ export default function ContactoPage() {
             <div>
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#8a8078] mb-1">Email</p>
               <a
-                href="mailto:hola@franceinteriorismo.com"
+                href="mailto:francecaballeroid@gmail.com"
                 className="text-sm text-[#1a1a1a] hover:opacity-60 transition-opacity"
               >
-                hola@franceinteriorismo.com
+                francecaballeroid@gmail.com
               </a>
             </div>
             <div>
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#8a8078] mb-1">Instagram</p>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/france_interiordesign"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-[#1a1a1a] hover:opacity-60 transition-opacity"
               >
-                @franceinteriorismo
+                @france_interiordesign
               </a>
             </div>
             <div>
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#8a8078] mb-1">WhatsApp</p>
               <a
-                href="https://wa.me/573000000000"
+                href="https://wa.me/50683362084"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-[#1a1a1a] hover:opacity-60 transition-opacity"
               >
-                +57 300 000 0000
+                +506 8336 2084
               </a>
             </div>
           </div>
@@ -56,7 +56,7 @@ export default function ContactoPage() {
 
         {/* Right: form */}
         <form
-          action="https://formspree.io/f/tu-form-id"
+          action="https://formspree.io/f/xkokyjkl"
           method="POST"
           className="space-y-6"
         >

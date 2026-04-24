@@ -40,20 +40,30 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li>
               <a
-                href="mailto:hola@franceinteriorismo.com"
+                href="mailto:francecaballeroid@gmail.com"
                 className="hover:text-white transition-colors duration-200"
               >
-                hola@franceinteriorismo.com
+                francecaballeroid@gmail.com
               </a>
             </li>
             <li>
               <a
-                href="https://instagram.com"
+                href="https://wa.me/50683362084"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors duration-200"
               >
-                Instagram
+                +506 8336 2084
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/france_interiordesign"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors duration-200"
+              >
+                @france_interiordesign
               </a>
             </li>
           </ul>
