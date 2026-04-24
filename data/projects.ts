@@ -1,4 +1,4 @@
-export type Category = 'Residencial' | 'Comercial' | 'Oficinas' | 'Playroom'
+export type Category = 'Residencial' | 'Comercial' | 'Habitacion' | 'Playroom'
 
 export interface ProjectImage {
   src: string
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     id: 'rios-room',
     title: "Rio's Room",
     slug: 'rios-room',
-    category: 'Residencial',
+    category: 'Habitacion',
     coverImage: '/projects/rios-room/cover.jpg',
     images: [
       { src: '/projects/rios-room/01.jpg' },
