@@ -28,7 +28,7 @@ export const projects: Project[] = [
     id: 'pk3',
     title: 'PK3',
     slug: 'pk3',
-    category: 'Playroom',
+    category: 'Residencial',
     coverImage: '/projects/pk3/cover.jpg',
     images: [
       { src: '/projects/pk3/01.jpg' },
@@ -79,7 +79,7 @@ export const projects: Project[] = [
     id: 'rios-room',
     title: "Rio's Room",
     slug: 'rios-room',
-    category: 'Habitacion',
+    category: 'Residencial',
     coverImage: '/projects/rios-room/cover.jpg',
     images: [
       { src: '/projects/rios-room/01.jpg' },
